@@ -1,5 +1,7 @@
 # GenAI-Project
 
+Youtube/Podcast Summariser -> Mindmap -> Flashcard/LLM Question -> Store Data
+
 Intended tooling:
 - python as the programming language
 - uv as the package manager
