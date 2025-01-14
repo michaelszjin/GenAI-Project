@@ -1,6 +1,6 @@
 # GenAI-Project
 
-Youtube/Podcast Summariser -> Mindmap -> Flashcard/LLM Question -> Store Data
+Youtube/Podcast or Text/PDF -> Mindmap -> Flashcard/LLM Question -> Store Data
 
 Intended tooling:
 - python as the programming language
