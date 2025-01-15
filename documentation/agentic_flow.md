@@ -12,16 +12,16 @@ Once the end is reached, then the process is complete.
 
 ```mermaid
 graph TD;
-    Start-->IntentExpert;
-    IntentExpert-->MindMap_Path;
-    IntentExpert-->Question_Path;
-    IntentExpert-->Guardrails;
-    MindMap_Path-->Transcript_Extractor;
-    Transcript_Extractor-->LLM_Summariser;
-    LLM_Summariser-->MindMapper;
-    LLM_Summariser-->Question_Path;
-    Question_Path-->RAG_LLM;
-    MindMapper-->ResponseExpert;
-    RAG_LLM-->ResponseExpert;
+    Start-->IntentExpert_LLM;
+    IntentExpert_LLM-->A{MindMap_Path};
+    IntentExpert_LLM-->B{Question_Path};
+    IntentExpert_LLM-->Guardrails;
+    A{MindMap_Path}-->Transcript_Extractor_Fn;
+    Transcript_Extractor_Fn-->Summariser_LLM;
+    Summariser_LLM-->MindMapper_Fn;
+    Summariser_LLM-->B{Question_Path};
+    B{Question_Path}-->RAG_LLM;
+    MindMapper_Fn-->ResponseExpert_LLM;
+    RAG_LLM-->ResponseExpert_LLM;
 
 ```
