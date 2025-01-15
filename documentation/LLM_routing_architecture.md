@@ -6,7 +6,9 @@ Requirements List:
   - Check if there is existing mindmap
   - Ask which mindmap to sample question from
 
-Flow Chart:
+Agentic Flow - Directed Acyclic Graph (DAG):  
+We begin by traversing the node from 'Start', and will only activate the next list of required nodes  once all pre-requisite nodes have been satisfied.
+Once the end is reached, then the process is complete.
 
 ```mermaid
 graph TD;
@@ -18,6 +20,8 @@ graph TD;
     Transcript_Extractor-->LLM_Summariser;
     LLM_Summariser-->MindMapper;
     LLM_Summariser-->Question_Path;
-Question_Path-->RAG_LLM;
+    Question_Path-->RAG_LLM;
+    MindMapper-->ResponseExpert;
+    RAG_LLM-->ResponseExpert;
 
 ```
